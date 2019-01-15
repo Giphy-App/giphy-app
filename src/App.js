@@ -22,12 +22,16 @@ class App extends Component {
   async handleSubmit(event){
     event.preventDefault()
     const query=this.state.searchInput
-    const {data} = await axios.get(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=HkfXFPHQMKATUUpd2DrfSqy5QNY98nUS&limit=5`)
-    console.log('data',data)
-    this.setState({
-      data,
-      searchInput: ''
-    })
+    try{
+      const {data} = await axios.get(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=HkfXFPHQMKATUUpd2DrfSqy5QNY98nUS&limit=5`)
+      console.log('data',data)
+      this.setState({
+        data,
+        searchInput: ''
+      })
+    } catch (error) {
+      console.error(error)
+    }
 
   }
 

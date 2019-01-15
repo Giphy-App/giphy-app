@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import SearchBar from '../components/SearchBar'
+import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <div id='header'>
           <h1>
-            Giphy
+            Giphy Fun
           </h1>
-          <SearchBar />
+      <div>
+        <input id='searchBar' type="text" placeholder="Search.." />
+      </div>
       </div>
     );
   }
